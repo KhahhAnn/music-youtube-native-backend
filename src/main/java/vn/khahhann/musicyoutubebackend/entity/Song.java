@@ -21,6 +21,9 @@ public class Song {
     @Column(name = "author", length = 256)
     private String author;
 
+    @Column(name = "ranking")
+    private Integer ranking ;
+
     @Column(name = "description", columnDefinition = "LONGTEXT")
     private String description;
 
