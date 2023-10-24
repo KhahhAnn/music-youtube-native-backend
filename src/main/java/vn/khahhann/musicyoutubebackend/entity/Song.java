@@ -31,6 +31,12 @@ public class Song {
     @Lob
     private String image;
 
+    @Column(name="is_start_song")
+    private boolean isStartSong;
+
+    @Column(name="is_hit_today")
+    private boolean isHitToday;
+
     @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE,CascadeType.PERSIST, CascadeType.REFRESH}, fetch = FetchType.LAZY)
     @JoinColumn(name = "id_album")
     private Album album;
