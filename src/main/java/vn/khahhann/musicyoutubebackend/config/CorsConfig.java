@@ -9,12 +9,15 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class CorsConfig {
     @Bean
     public WebMvcConfigurer corsConfigurer() {
+
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
+
                 // Cho phép tất cả các nguồn truy cập (mục đích thử nghiệm)
                 registry.addMapping("/**")
                         .allowedOrigins("http://192.168.51.102:8081")
+                        .allowedOrigins("http://192.168.43.194:8081")
                         .allowedMethods("GET", "POST", "PUT", "DELETE")
                         .allowedHeaders("*");
             }
