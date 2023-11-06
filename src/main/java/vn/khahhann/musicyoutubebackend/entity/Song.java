@@ -31,6 +31,13 @@ public class Song {
     @Lob
     private String image;
 
+    @Column(name="song_data", columnDefinition = "LONGTEXT")
+    @Lob
+    private String songData;
+
+    @Column(name = "duration")
+    private Integer duration;
+
     @Column(name="is_start_song")
     private boolean isStartSong;
 

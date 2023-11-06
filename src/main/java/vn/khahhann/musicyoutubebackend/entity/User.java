@@ -26,6 +26,16 @@ public class User {
     @Column(nullable = false, length = 256)
     private String password;
 
+    @Column(name = "is_active")
+    private boolean isActive;
+
+    @Column(name = "activation_code")
+    private String activationCode;
+
+    @Column(name="image_data", columnDefinition = "LONGTEXT")
+    @Lob
+    private String image;
+
     @ManyToMany(cascade = {
             CascadeType.DETACH,
             CascadeType.MERGE,

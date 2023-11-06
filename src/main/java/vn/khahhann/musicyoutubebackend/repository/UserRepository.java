@@ -7,5 +7,11 @@ import vn.khahhann.musicyoutubebackend.entity.User;
 
 @RepositoryRestResource(path = "user")
 public interface UserRepository extends JpaRepository<User, Integer> {
+    public User findByEmail(String email);
+
+    public boolean existsByEmail(String email);
+
+    public User findByEmailAndPassword(String email, String password);
+
 }
 

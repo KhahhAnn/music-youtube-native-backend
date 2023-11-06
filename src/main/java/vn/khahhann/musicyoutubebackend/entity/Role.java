@@ -32,4 +32,8 @@ public class Role {
             inverseJoinColumns = @JoinColumn(name = "id_user")
     )
     private List<User> userList;
+
+    public void setUserList(List<User> userList) {
+        this.userList = userList;
+    }
 }
