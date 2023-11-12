@@ -36,6 +36,7 @@ public class AccountServiceImpl implements AccountService {
         user.setPassword(encryptPassword);
         user.setActivationCode(createActivationCode());
         user.setActive(false);
+        user.setImage("https://www.google.com/url?sa=i&url=https%3A%2F%2Fvietnamnet.vn%2Fdan-mang-du-trend-facebook-doi-avatar-thanh-mat-trang-i63266.html&psig=AOvVaw1HFy0JwdZlCCZSS8ip4mtt&ust=1699617920128000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCPDB6qbwtoIDFQAAAAAdAAAAABAE");
         List<Role> defaultRoles = roleRepository.findByRoleName("ROLE_USER");
         user.setRoleList(defaultRoles);
         User newUser = this.userRepository.saveAndFlush(user);
