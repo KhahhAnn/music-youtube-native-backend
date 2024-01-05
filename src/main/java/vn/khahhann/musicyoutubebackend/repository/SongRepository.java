@@ -23,7 +23,8 @@ public interface SongRepository extends JpaRepository<Song, Integer> {
     List<Song>  findByIsHitTodayTrue();
     List<Song> findBySongNameContaining(@RequestParam("songName") String songName);
     Song findByAlbum_AlbumNameAndId(String albumName, int songId);
-
+    @Query("SELECT s FROM Song s WHERE s.songName LIKE %:songName% AND s.album.id != 21")
+    List<Song> findBySongNameContainingAndAlbumNotId(@Param("songName") String songName);
     @Query("SELECT MAX(s.ranking) FROM Song s WHERE s.album.albumName = :albumName")
     Integer findMaxRankingInAlbum(@Param("albumName") String albumName);
 

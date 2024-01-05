@@ -37,7 +37,7 @@ public class SecurityConfiguration {
                         .requestMatchers(HttpMethod.GET, "/account/**").permitAll()
                         .requestMatchers(HttpMethod.POST, "/account/**").permitAll()
                         .requestMatchers(HttpMethod.GET, "/user/**").permitAll()
-                        .requestMatchers(HttpMethod.POST, "/api/add-to-my-album").hasAnyAuthority("ROLE_USER", "ROLE_ADMIN")
+                        .anyRequest().permitAll()
         );
         http.httpBasic(Customizer.withDefaults());
         http.csrf(csrf -> csrf.disable());

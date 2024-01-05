@@ -36,16 +36,18 @@ public class SongServiceImpl implements SongService {
 
         int newRanking = maxRanking + 1;
 
-        // Create a new instance of the song with the same content
         Song newSong = new Song();
         newSong.setSongName(originalSong.getSongName());
         newSong.setAuthor(originalSong.getAuthor());
         newSong.setRanking(newRanking);
         newSong.setDescription(originalSong.getDescription());
         newSong.setImage(originalSong.getImage());
-        newSong.setStartSong(originalSong.isStartSong());
-        newSong.setHitToday(originalSong.isHitToday());
+        newSong.setStartSong(false);
+        newSong.setHitToday(false);
+        newSong.setSongData(originalSong.getSongData());
+        newSong.setDuration(originalSong.getDuration());
         newSong.setAlbum(existingAlbum);
+
 
         // Save the new song with the existing or new album
         songRepository.saveAndFlush(newSong);
